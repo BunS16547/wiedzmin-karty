@@ -15,29 +15,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 6vw;
 
-    padding: 2vh 5vw;
+    padding: 1vh 5vw 1vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10vw;
 }
 
 .absolute-text {
 
-    font-size: 2em;
+    font-size: 6vw;
     text-align: center;
-
-    z-index: 200;
     color: white;
 }
 
 .card-wrapper {
     width: 100%;
-    height: 65vh;
+    height: 55vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 5em;
+    border-radius: 5vw;
 }
 
 .action-buttons {
@@ -45,22 +50,22 @@
     justify-content: center;
     align-items: center;
 
-    padding: 2em;
+    padding: 2vw;
     gap: 20%;
 }
 
 .roll-card {
-    padding: .55em 1.4em;
-    font-size: 2.25em;
-    border-radius: .65em;
+    padding: 2.2vw 5.6vw;
+    font-size: 5vw;
+    border-radius: 1.3vw;
 
     transition: all .15s ease-in;
 }
 
 .reset {
-    padding: .35em .8em;
-    font-size: 1.25em;
-    border-radius: .65em;
+    padding: .9vw 2vw;
+    font-size: 3vw;
+    border-radius: 1vw;
     background-color: #a87309;
     color: white;
 
@@ -77,7 +82,7 @@
     width: 100%;
     height: 100%;
 
-    border-radius: 5em;
+    border-radius: 5vw;
     background-color: #c7bfbf;
 
     display: grid;
@@ -87,7 +92,7 @@
 .card-image-wrapper {
     aspect-ratio: 1 / 1.5;
 
-    width: clamp(200px, 70%, 400px);
+    width: clamp(150px, 60%, 300px);
     border-radius: 3em;
 
     display: grid;
