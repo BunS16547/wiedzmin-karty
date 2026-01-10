@@ -55,15 +55,15 @@ main {
 }
 
 .roll-card {
-    padding: 2.2vw 5.6vw;
-    font-size: 5vw;
+    padding: 2.2vw 7vw;
+    font-size: 6.5vw;
     border-radius: 1.3vw;
 
     transition: all .15s ease-in;
 }
 
 .reset {
-    padding: .9vw 2vw;
+    padding: 1.2vw 3vw;
     font-size: 3vw;
     border-radius: 1vw;
     background-color: #a87309;
@@ -92,15 +92,21 @@ main {
 .card-image-wrapper {
     aspect-ratio: 1 / 1.5;
 
-    width: clamp(150px, 60%, 300px);
     border-radius: 3em;
+
+    @media (max-width: 600px) {
+        width: 70%;
+    }
+
+    width: clamp(150px, 60%, 300px);
+
 
     display: grid;
     place-items: center;
 
     & h1 {
         color: black;
-        font-size: 5vw;
+        font-size: 7vw;
         text-align: center;
     }
 
