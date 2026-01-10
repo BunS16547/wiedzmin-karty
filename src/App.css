@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+
+    padding: 2vh 5vw;
+}
+
+.absolute-text {
+
+    font-size: 2em;
+    text-align: center;
+
+    z-index: 200;
+    color: white;
+}
+
+.card-wrapper {
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5em;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2em;
+    gap: 2em;
+}
+
+.roll-card {
+    padding: .35em 1em;
+    font-size: 1.75em;
+    border-radius: .65em;
+
+    transition: all .15s ease-in;
+}
+
+.reset {
+    padding: .35em 1em;
+    font-size: 1.75em;
+    border-radius: .65em;
+
+    transition: all .15s ease-in;
+
+}
+
+.roll-card:active, .reset:active {
+    color: red;
+    box-shadow: 1px 1px 12px white, -1px -1px 12px white;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5em;
+    background-color: #c7bfbf;
+
+    display: grid;
+    place-items: center;
+}
+
+.card-image-wrapper {
+    aspect-ratio: 1 / 1.5;
+
+    width: clamp(200px, 75%, 400px);
+    border-radius: 3em;
+
+    display: grid;
+    place-items: center;
+
+    & h1 {
+        color: black;
+        font-size: 3em;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3em;
+    }
+}
