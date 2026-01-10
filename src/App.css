@@ -87,7 +87,7 @@
 .card-image-wrapper {
     aspect-ratio: 1 / 1.5;
 
-    width: clamp(200px, 55%, 350px);
+    width: clamp(200px, 70%, 400px);
     border-radius: 3em;
 
     display: grid;
