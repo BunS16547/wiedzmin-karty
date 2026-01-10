@@ -46,21 +46,23 @@
     align-items: center;
 
     padding: 2em;
-    gap: 2em;
+    gap: 20%;
 }
 
 .roll-card {
-    padding: .35em 1em;
-    font-size: 1.75em;
+    padding: .55em 1.4em;
+    font-size: 2.25em;
     border-radius: .65em;
 
     transition: all .15s ease-in;
 }
 
 .reset {
-    padding: .35em 1em;
-    font-size: 1.75em;
+    padding: .35em .8em;
+    font-size: 1.25em;
     border-radius: .65em;
+    background-color: #a87309;
+    color: white;
 
     transition: all .15s ease-in;
 

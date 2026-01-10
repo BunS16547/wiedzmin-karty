@@ -30,7 +30,7 @@ function App() {
 		
 		setCardNumber(0);
 		setCardDeck(createDeck(36));
-		delayClick(5000);
+		delayClick(2000);
 	}
 	
 	function lowerCardCounter(randomNumber: number) {
