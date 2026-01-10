@@ -100,7 +100,8 @@ main {
 
     & h1 {
         color: black;
-        font-size: 3em;
+        font-size: 5vw;
+        text-align: center;
     }
 
     & img {
