@@ -6,8 +6,15 @@ import createDeck from "./createDeck.ts";
 function App() {
 	const [cardNumber, setCardNumber] = useState<number>(0);
 	const [cardDeck, setCardDeck] = useState<number[]>(createDeck(36));
+	const [canClick, setCanClick] = useState<boolean>(true);
 	
 	const cardCounter = cardDeck.length;
+	
+	function delayClick(time: number) {
+		setCanClick(false);
+		
+		setTimeout(() => setCanClick(true), time);
+	}
 	
 	function rand(listLength: number) {
 		return Math.floor(Math.random() * listLength);
@@ -23,6 +30,7 @@ function App() {
 		
 		setCardNumber(0);
 		setCardDeck(createDeck(36));
+		delayClick(5000);
 	}
 	
 	function lowerCardCounter(randomNumber: number) {
@@ -41,6 +49,7 @@ function App() {
 		const randomNum = cardDeck[randomIndex];
 		
 		lowerCardCounter(randomNum);
+		delayClick(3000);
 	}
 	
 	const textMessage = cardCounter > 0
@@ -61,11 +70,11 @@ function App() {
 				</div>
 				
 				<div className={"action-buttons"}>
-					<button className={"roll-card"} onClick={rollNumber} disabled={cardCounter == 0}>
+					<button className={"roll-card"} onClick={rollNumber} disabled={cardCounter == 0 || !canClick}>
 						Wylosuj Kartę
 					</button>
 					
-					<button className={"reset"} onClick={resetCards} disabled={cardCounter == 36}>
+					<button className={"reset"} onClick={resetCards} disabled={cardCounter == 36 || !canClick}>
 						Zresetuj Grę
 					</button>
 				
