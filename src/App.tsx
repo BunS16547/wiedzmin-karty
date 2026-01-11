@@ -83,34 +83,44 @@ function App() {
 		: "Nie pozostały żadne inne karty";
 	
 	return (
-		<div className={"main-container"}>
-			<h1 className={"info-text"}>
-				{textMessage}
-			</h1>
+		
+		<>
+			<div className={"button-start-wrapper"}>
+				<button className={"go-to-app"}>
+					<a href={"#info-text"}>Przejdź do gry</a>
+				</button>
+			</div>
 			
-			<button className={"reset-game"} onClick={resetGame} disabled={cardCounter == 36 || !canClick}>
-				Zresetuj Rozgrywkę
-			</button>
-			
-			<main>
-				<div className={"card-wrapper"}>
-					<Card cardNumber={cardNumber}/>
-				</div>
+			<div className={"main-container"} id={"main-container"}>
+				<h1 className={"info-text"} id={"info-text"}>
+					{textMessage}
+				</h1>
 				
-				<div className={"action-buttons"}>
-					<button className={"roll-next-card"} onClick={rollNextCard}
-					        disabled={cardCounter == 0 || !canClick}>
-						Wylosuj {cardCounter == 36 ? "pierwszą" : "następną"} kartę
-					</button>
+				<button className={"reset-game"} onClick={resetGame} disabled={cardCounter == 36 || !canClick}>
+					Zresetuj Rozgrywkę
+				</button>
+				
+				<main>
+					<div className={"card-wrapper"}>
+						<Card cardNumber={cardNumber} rollNextCard={rollNextCard}/>
+					</div>
 					
-					<button className={"show-previous-card"} onClick={showPreviousCard}
-					        disabled={cardCounter >= 35 || !canClick}>
-						Przywróć poprzednią kartę
-					</button>
-				
-				</div>
-			</main>
-		</div>
+					<div className={"action-buttons"}>
+						<button className={"roll-next-card"} onClick={rollNextCard}
+						        disabled={cardCounter == 0 || cardCounter == 36 || !canClick}>
+							Wylosuj kartę
+						</button>
+						
+						<button className={"show-previous-card"} onClick={showPreviousCard}
+						        disabled={cardCounter >= 35 || !canClick}>
+							Przywróć kartę
+						</button>
+					
+					</div>
+				</main>
+			</div>
+		</>
+	
 	)
 }
 
