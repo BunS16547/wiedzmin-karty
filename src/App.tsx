@@ -29,7 +29,7 @@ function App() {
 		setCardDeck(createDeck(36));
 		setPreviousNumbers([]);
 		
-		delayClick(1500);
+		delayClick(500);
 	}
 	
 	function showPreviousCard() {
@@ -77,9 +77,21 @@ function App() {
 	const cardCounterLastDigit = Number.parseInt(String(cardCounter).at(-1) ?? "0");
 	
 	const textMessage = cardCounter > 0
-		? `Pozostał${cardCounterLastDigit == 1 ? "a" : cardCounterLastDigit < 5 ? "y" : "o"}
+		? `Pozostał${cardCounterLastDigit > 0
+			? cardCounterLastDigit == 1
+				? cardCounter == 1
+					? "a"
+					: "o"
+				: cardCounterLastDigit < 5
+					? "y"
+					: "o"
+			: "o"}
 		 ${cardCounter}
-		 kart${cardCounterLastDigit == 1 ? "a" : cardCounterLastDigit < 5 ? "y" : ""} eksploracji miast`
+		 kart${cardCounterLastDigit == 1
+			? cardCounter == 1 ? "a" : ""
+			: cardCounterLastDigit < 5
+				? "y"
+				: ""} eksploracji miast`
 		: "Nie pozostały żadne inne karty";
 	
 	return (
