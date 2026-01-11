@@ -67,17 +67,19 @@
     .action-buttons {
         display: flex;
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
 
-        gap: 5vw;
+        gap: 10vw;
+        font-size: 5.5vw;
+
 
         padding: 0 2vw 2vw;
     }
 
     .roll-next-card {
-        padding: 3vw 5vw;
-        font-size: 4vw;
-        border-radius: 2.6vw;
+        padding: 4vw 6vw;
+        font-size: 1em;
+        border-radius: 3.5vw;
 
         &:active {
             color: white;
@@ -87,9 +89,9 @@
     }
 
     .show-previous-card {
-        padding: 2.8vw 2.9vw;
-        font-size: 2.6vw;
-        border-radius: 1vw;
+        padding: 3vw 3vw;
+        font-size: 0.65em;
+        border-radius: 2vw;
         background-color: #a87309;
         color: white;
 
