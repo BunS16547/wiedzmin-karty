@@ -42,8 +42,7 @@ function App() {
 		setCardNumber(previousNumbers[previousNumbers.length - 1] ?? 0);
 		
 		setPreviousNumbers(previousCards => {
-			previousCards.pop();
-			return previousCards;
+			return previousCards.slice(0, previousCards.length - 1);
 		})
 		
 		delayClick(3000);
@@ -56,7 +55,10 @@ function App() {
 		setCardDeck(cards => {
 			return cards.filter(num => num != randomNumber);
 		})
-		setPreviousNumbers(previousCards => [...previousCards, currCardNumber]);
+		
+		if (currCardNumber !== 0) {
+			setPreviousNumbers(previousCards => [...previousCards, currCardNumber]);
+		}
 		
 		console.log("Wylosowana: ", randomNumber);
 	}
@@ -119,7 +121,7 @@ function App() {
 					
 					<div className={"action-buttons"}>
 						<button className={"roll-next-card"} onClick={rollNextCard}
-						        disabled={cardCounter == 0 || cardCounter == 36 || !canClick}>
+						        disabled={cardCounter == 0 || !canClick}>
 							Wylosuj kartę
 						</button>
 						
@@ -130,6 +132,29 @@ function App() {
 					
 					</div>
 				</main>
+				
+				{previousNumbers.length !== 0
+					? (
+						<div className={"previous-cards-wrapper"}>
+							<h1 className={"previous-card-title"}>
+								Poprzednie karty:
+							</h1>
+							{[...previousNumbers].reverse().map(
+								(num: number) => {
+									return (
+										<>
+											<p> Karta nr {36 - previousNumbers.findIndex(card => card === num)}
+											</p>
+											<Card cardNumber={num} isPreviousCard={true} key={num}/>
+										</>
+									)
+								}
+							)}
+						</div>
+					)
+					: null
+				}
+			
 			</div>
 		</>
 	
